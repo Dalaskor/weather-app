@@ -1,0 +1,18 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	background: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		from(#3543c6),
+		to(#c815f4)
+	);
+	background: -o-linear-gradient(top, #3543c6 0%, #c815f4 100%);
+	background: linear-gradient(180deg, #3543c6 0%, #c815f4 100%);
+}
+
+#root {
+	padding-top: 2.7rem;
+	padding-bottom: 3.2rem;
+}
