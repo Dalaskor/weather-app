@@ -1,0 +1,58 @@
+.weather {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.9rem;
+	}
+
+	&__city {
+		font-weight: 700;
+		font-size: 2.4rem;
+		line-height: 2.8rem;
+	}
+
+	&__image {
+	}
+
+	&__temp {
+		font-weight: 700;
+		font-size: 6.4rem;
+		line-height: 7.5rem;
+	}
+
+	&__type {
+		font-weight: 700;
+		font-size: 2.4rem;
+		line-height: 2.8rem;
+	}
+
+	&__moreinfo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10rem;
+		margin-top: 10rem;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem
+	}
+
+	&__infoTitle {
+		font-weight: 500;
+		font-size: 1.6rem;
+		line-height: 1.9rem;
+	}
+
+	&__infoDesc {
+		font-weight: 400;
+		font-size: 1.6rem;
+		line-height: 1.9rem;
+	}
+}

@@ -12,11 +12,30 @@ const CurrentWeather = ({ city }: currentWeatherProps) => {
 	return (
 		<section className={style.weather}>
 			<div className={style.weather__container}>
-				<Loader/>
-				<div className={style.weather__city}>{}</div>
-				<div className={style.weather__image}>{}</div>
-				<div className={style.weather__temp}>{}</div>
-				<div className={style.weather__type}>{}</div>
+				{loading && <Loader />}
+				{error && <div>error</div>}
+				{weather && (
+					<>
+						<div className={style.weather__city}>{weather.name}</div>
+						<div className={style.weather__image}>{}</div>
+						<div className={style.weather__temp}>{Math.round(weather.main.temp) + '°С'}</div>
+						<div className={style.weather__type}>{weather.weather[0].main}</div>
+						<div className={style.weather__moreinfo}>
+							<div className={style.weather__info}>
+								<div className={style.weather__infoTitle}>Wind</div>
+								<div className={style.weather__infoDesc}>{weather.wind.speed + 'm/s'}</div>
+							</div>
+							<div className={style.weather__info}>
+								<div className={style.weather__infoTitle}>Humidity</div>
+								<div className={style.weather__infoDesc}>{weather.main.humidity + '%'}</div>
+							</div>
+							<div className={style.weather__info}>
+								<div className={style.weather__infoTitle}>Pressure</div>
+								<div className={style.weather__infoDesc}>{weather.main.pressure + 'mmHg'}</div>
+							</div>
+						</div>
+					</>
+				)}
 			</div>
 		</section>
 	);

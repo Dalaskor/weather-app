@@ -14,7 +14,7 @@ export const useWeather = (city: string) => {
 			setError("");
 			setLoading(true);
 
-			const url = baseURL + `?appid=${apiKey}&q=${city}`;
+			const url = baseURL + `?appid=${apiKey}&q=${city}&units=metric`;
 			const response = await axios.get<IWheather>(url);
 
 			setWeather(response.data);
