@@ -6,11 +6,12 @@ import { useGeolocation } from "./hooks/geolocation";
 
 const App = () => {
 	const { coords, loading } = useGeolocation();
+
 	return (
 		<>
 			{loading && <Loader />}
 			<DateComponent />
-			{!loading && (coords && <CurrentWeather coords={coords} />)}
+			{coords && <CurrentWeather coords={coords} />}
 		</>
 	);
 };

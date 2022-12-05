@@ -2,6 +2,7 @@ import React from "react";
 import { useWeather } from "../../hooks/weather";
 import { ICoords } from "../../model";
 import Loader from "../Loader/Loader";
+import RowCards from "../RowCards/RowCards";
 import style from "./CurrentWeather.module.scss";
 
 interface currentWeatherProps {
@@ -34,6 +35,9 @@ const CurrentWeather = ({ coords }: currentWeatherProps) => {
 								<div className={style.weather__infoTitle}>Pressure</div>
 								<div className={style.weather__infoDesc}>{weather.main.pressure + 'mmHg'}</div>
 							</div>
+						</div>
+						<div className={style.weather__row}>
+							<RowCards sunriseTime={weather.sys.sunrise} sunsetTime={weather.sys.sunset} />
 						</div>
 					</>
 				)}
