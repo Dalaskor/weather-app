@@ -1,14 +1,15 @@
 import React from "react";
-import { useWeather } from "../../../hooks/weather";
+import { useWeather } from "../../hooks/weather";
+import { ICoords } from "../../model";
 import Loader from "../Loader/Loader";
 import style from "./CurrentWeather.module.scss";
 
 interface currentWeatherProps {
-	city: string;
+	coords: ICoords,
 }
 
-const CurrentWeather = ({ city }: currentWeatherProps) => {
-	const { weather, error, loading } = useWeather(city);
+const CurrentWeather = ({ coords }: currentWeatherProps) => {
+	const { weather, error, loading } = useWeather(coords);
 	return (
 		<section className={style.weather}>
 			<div className={style.weather__container}>

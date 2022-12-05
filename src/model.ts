@@ -41,3 +41,8 @@ export interface IWheather {
 	name: string;
 	cod: number;
 }
+
+export interface ICoords {
+	lat: number;
+	lon: number;
+}

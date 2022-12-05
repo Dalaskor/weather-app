@@ -1,12 +1,16 @@
 import "./App.scss";
-import CurrentWeather from "./assets/components/CurrentWeather/CurrentWeather";
-import DateComponent from "./assets/components/Date/DateComponent";
+import CurrentWeather from "./components/CurrentWeather/CurrentWeather";
+import DateComponent from "./components/Date/DateComponent";
+import Loader from "./components/Loader/Loader";
+import { useGeolocation } from "./hooks/geolocation";
 
 const App = () => {
+	const { coords, loading } = useGeolocation();
 	return (
 		<>
+			{loading && <Loader />}
 			<DateComponent />
-			<CurrentWeather city="Astrakhan" />
+			{!loading && (coords && <CurrentWeather coords={coords} />)}
 		</>
 	);
 };

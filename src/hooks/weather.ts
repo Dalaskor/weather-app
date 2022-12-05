@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
-import { IWheather } from "../model";
+import { ICoords, IWheather } from "../model";
 
-export const useWeather = (city: string) => {
+export const useWeather = (coords: ICoords) => {
 	const [weather, setWeather] = useState<IWheather>();
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState("");
@@ -14,7 +14,7 @@ export const useWeather = (city: string) => {
 			setError("");
 			setLoading(true);
 
-			const url = baseURL + `?appid=${apiKey}&q=${city}&units=metric`;
+			const url = baseURL + `?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
 			const response = await axios.get<IWheather>(url);
 
 			setWeather(response.data);
